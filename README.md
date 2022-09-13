@@ -12,7 +12,7 @@ ___POST___
 _/telegram_ - Отправляет новые лиды в телеграм чат
 
 *Parameters*
-chat_id - принимает на вход chat_id, узнать его можно у бота @LeadsFromVk написав /start
+
 
 ```
 Привет, я буду отправлять тебе информацию о новых лидах, id нашего чата --> 3909888
@@ -22,10 +22,21 @@ json - данные(лиды из вк) которые нужно отправи
 
 ```
 {
- "data": [{"name": name}, {"phone": phone}]
+ "data": [{"name": name}, {"phone": phone}],
+ "chat_id" - принимает на вход chat_id, узнать его можно у бота @LeadsFromVk написав /start
 }
 ```
 
 
 Responses 201 сообщение отправлено
 
+______рекомендуемый пример запроса___
+
+```
+def post_to_tg(res, chat_id, host):
+    chat_id_data = {'chat_id': chat_id}
+    res.update(chat_id_data)
+    url_for_tg = f'http://{host}:5001/telegram'
+    response = requests.post(url_for_tg, json=res)
+    return response
+```
