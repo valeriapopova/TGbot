@@ -1,6 +1,6 @@
 # API telegram bot для оповещения о новых лидах
 
-[![Telegram](https://img.shields.io/badge/-Telegram-141130?style=for-the-badge&logo=Telegram)](https://t.me/LeadsFromVk)
+[![Telegram](https://img.shields.io/badge/-Telegram-141130?style=for-the-badge&logo=Telegram)](https://t.me/LeadsFromVk?start=ml195)
 
 Метод, позвляющий получать оповещения о новых лидах (перенаправленные)
 
