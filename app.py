@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.config.from_object(Configuration)
 
 
-@app.route('/telegram', methods=['POST', 'GET'])
+@app.route('/telegram/post', methods=['POST'])
 def send_mess():
     if request.method == 'POST':
         try:
@@ -20,6 +20,7 @@ def send_mess():
             name = json_file['data'][0]['name']
             phone = json_file['data'][1]['phone']
             bot.send_message(chat_id, f'Новый лид!!! имя {name} , номер телефона {phone}')
+            # bot.polling()
             return Response("Сообщение отправлено", 201)
 
         except BadRequestKeyError:
