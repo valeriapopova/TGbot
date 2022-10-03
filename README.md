@@ -36,7 +36,11 @@ ___рекомендуемый пример запроса___
 def post_to_tg(res, chat_id, host):
     chat_id_data = {'chat_id': chat_id}
     res.update(chat_id_data)
-    url_for_tg = f'http://{host}:5001/telegram'
+    url_for_tg = f'http://{host}:5001/telegram/post'
     response = requests.post(url_for_tg, json=res)
     return response
 ```
+
+***Авторизационные данные:***
+
+- chat_id узнать id чата можно у бота @LeadsFromVk написав /start
